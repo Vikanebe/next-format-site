@@ -1,0 +1,63 @@
+@import "src/styles/colors.sass"
+
+@keyframes spinner
+  0%
+    transform: translate(-50%, -50%) rotate(0deg)
+  100%
+    transform: translate(-50%, -50%) rotate(360deg)
+
+@keyframes shadowSize
+  0%
+    box-shadow: 15px 0 0 0, 30px 0 0 0 ,45px 0 0 0, 60px 0 0 0, 75px 0 0 0
+  20%
+    box-shadow: 15px 0 0 5px, 30px 0 0 0 ,45px 0 0 0, 60px 0 0 0, 75px 0 0 0
+  40%
+    box-shadow: 15px 0 0 0, 30px 0 0 5px ,45px 0 0 0, 60px 0 0 0, 75px 0 0 0
+  60%
+    box-shadow: 15px 0 0 0, 30px 0 0 0 ,45px 0 0 5px, 60px 0 0 0, 75px 0 0 0
+  80%
+    box-shadow: 15px 0 0 0, 30px 0 0 0 ,45px 0 0 0, 60px 0 0 5px, 75px 0 0 0
+  100%
+    box-shadow: 15px 0 0 0, 30px 0 0 0 ,45px 0 0 0, 60px 0 0 0, 75px 0 0 5px
+
+.spinner
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: auto
+  width: 70px
+  height: 70px
+
+  > div
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 45px
+    height: 45px
+    border: 6px solid $backgroundRed
+    border-radius: 50%
+    border-top-color: $backgroundWhite
+    transform: translate(-50%, -50%)
+    animation: spinner 1s infinite linear
+
+.dots
+  margin-top: 1rem
+
+  > div
+    position: relative
+    width: 100px
+    height: 20px
+    margin: auto
+    border-radius: 0
+
+    &::before
+      content: ''
+      position: absolute
+      width: 10px
+      height: 10px
+      left: 0
+      top: calc(50% - 5px)
+      border-radius: 100%
+      animation: shadowSize 2s ease-in infinite
+      color: #027AD0

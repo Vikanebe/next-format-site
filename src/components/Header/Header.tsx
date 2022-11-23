@@ -1,19 +1,49 @@
-import {FC, useCallback} from "react"
+import { FC, useCallback } from "react"
+import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
+
+import { ReactComponent as LogoMini} from "../../static/icons/LogoMiniIcon.svg";
+import { ReactComponent as MenuIcon} from "../../static/icons/MenuIcon.svg";
+import { JOBS_P, MAIN_P, PROJECTS_P } from "../../utils/constants";
+
 import styles from "./Header.module.sass";
-import {ReactComponent as LogoMini} from "../../static/icons/LogoMiniIcon.svg";
-import { useNavigate } from "react-router-dom";
-import { MAIN_P } from "../../utils/constants";
+
+import { useAppSelector } from "../../store";
+import { getIsMobile } from "../../store/slelectors/app-selector";
 
 const Header: FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  const isMobile = useAppSelector(getIsMobile);
 
   const returnToMainPage = useCallback(() => {
     navigate(MAIN_P);
   }, []);
 
+  const openCloseMenu = useCallback(() => {
+
+  }, []);
+
   return (
     <div className={styles["wrapper"]}>
-      <LogoMini onClick={returnToMainPage}/>
+      <LogoMini onClick={returnToMainPage} className={styles["logo"]}/>
+      {
+        isMobile
+          ? <MenuIcon onClick={openCloseMenu}/>
+          : <div className={styles["links"]}>
+              <Link
+                to={PROJECTS_P}
+                className={styles['link']}
+                children={"Наши проекты"} //{t("projects.our_projects")}
+              />
+
+              <Link
+                to={JOBS_P}
+                className={styles['link']}
+                children={"Работа у нас"} //{t('jobs.job_with_us')}
+              />
+            </div>
+      }
     </div>
   )
 }

@@ -1,4 +1,5 @@
 @import "src/styles/colors"
+@import "src/styles/mixins"
 
 .wrapper
   position: fixed
@@ -6,10 +7,24 @@
   left: 0
   right: 0
   z-index: 300
-  height: 50px
-  min-height: 50px
-  padding: 0
+  height: 60px
+  min-height: 60px
+  padding: 0 48px
   display: flex
+  justify-content: space-between
   align-items: center
   background-color: $backgroundWhite
+  @include mobile
+    padding: 15px
+    height: 50px
+    min-height: 50px
 
+.logo
+  cursor: pointer
+  @include mobile
+    width: 27px
+    height: 26px
+
+.links
+  > * + *
+    margin-left: 60px
