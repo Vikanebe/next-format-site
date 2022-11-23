@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-
+import { BrowserRouter } from 'react-router-dom';
 
 import { App } from './App';
 import './i18n';
 import './index.sass';
-import { BrowserRouter } from 'react-router-dom';
+import "./"
+import { Provider } from 'react-redux';
+import { store } from "./store"
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,9 +16,13 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Suspense fallback={<div/>}>
+        <App />
+        </Suspense>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

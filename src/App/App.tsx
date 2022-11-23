@@ -1,8 +1,10 @@
 import React, { FC, useCallback, useEffect } from 'react';
+import { Header } from '../components/Header';
+import { Router } from '../routers';
 import { resize } from '../store/slices/appSlice';
-import {useAppDispatch} from "../store/store";
+import {useAppDispatch} from "../store";
 import { MOBILE_SCREEN_WIDTH } from '../utils/constants';
-
+import styles from "./App.module.sass";
 
 const App: FC = () => {
   const dispatch = useAppDispatch();
@@ -21,8 +23,14 @@ const App: FC = () => {
   }, [updateDimensions]);
 
   return (
-    <div>
+    <div className={styles["wrapper"]}>
+      <div>
+        <Header/>
+      </div>
 
+      <div className={styles['content']}>
+        <Router/>
+      </div>
     </div>
   )
 }

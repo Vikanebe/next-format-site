@@ -1,15 +1,11 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export type AppSliceState = {
-  app: {
-    isMobile: boolean
-  }
+  isMobile: boolean
 }
 
 const initialState: AppSliceState = {
-  app: {
-    isMobile: false,
-  }
+  isMobile: false,
 }
 
 export const appSlice = createSlice({
@@ -17,7 +13,7 @@ export const appSlice = createSlice({
   initialState,
   reducers: {
     resize(state, action: PayloadAction<boolean>) {
-      state.app.isMobile = action.payload
+      state.isMobile = action.payload
     },
   }
 });
