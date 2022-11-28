@@ -18,7 +18,7 @@ const Header: FC = () => {
 
   const returnToMainPage = useCallback(() => {
     navigate(MAIN_P);
-  }, []);
+  }, [navigate]);
 
   const openCloseMenu = useCallback(() => {
 
@@ -34,18 +34,18 @@ const Header: FC = () => {
               <Link
                 to={PROJECTS_P}
                 className={styles['link']}
-                children={"Наши проекты"} //{t("projects.our_projects")}
+                children={t("links.our_projects")}
               />
 
               <Link
                 to={JOBS_P}
                 className={styles['link']}
-                children={"Работа у нас"} //{t('jobs.job_with_us')}
+                children={t('links.job_with_us')}
               />
             </div>
       }
     </div>
   )
-}
+};
 
 export {Header};

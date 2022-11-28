@@ -1,8 +1,26 @@
 {
-  "projects": {
-    "our_projects": "Наши проекты"
+  "links": {
+    "our_projects": "Наши проекты",
+    "job_with_us": "Работа у нас",
+    "view_portfolio": "Посмотреть наше портфолио",
+    "view_vacancies": "Посмотреть открытые вакасии"
   },
-  "jobs": {
-    "job_with_us": "Работа у нас"
+  "contacts": {
+    "to_whatsApp": "Написать нам в WhatsApp",
+    "to_Telegram": "Написать нам в Telegram"
+  },
+  "text": {
+    "description_company": "Перспективная команда разработчиков из России. Осуществляем полный цикл разработки продуктов - от создания до поддержания юзабилити продукта после продакшна.",
+    "we_create_any_products": "Мы создаём продукты различного функционала",
+    "best_capabilities_for_you": "Хорошая возможность стать лучше вместе с нами"
+  },
+  "titles": {
+    "our_team": "Наша команда",
+    "our_advantages": "Наши преимущества",
+    "job_with_us": "Работа у нас",
+    "development": "Разработка",
+    "middle_frontend_developer": "Middle Front-end developer",
+    "junior_backend_developer": "Junior Back-end developer",
+    "junior_flutter_developer": "Junior flutter developer"
   }
 }

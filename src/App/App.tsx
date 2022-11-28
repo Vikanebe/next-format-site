@@ -1,11 +1,14 @@
 import React, { FC, useCallback, useEffect } from 'react';
+
 import { Header } from '../components/Header';
 import { Router } from '../routers';
 import { resize } from '../store/slices/app-slice';
-import {useAppDispatch} from "../store";
 import { MOBILE_SCREEN_WIDTH } from '../utils/constants';
-import styles from "./App.module.sass";
 import { Footer } from '../components/Footer';
+
+import { useAppDispatch } from "../store";
+
+import styles from "./App.module.sass";
 
 const App: FC = () => {
   const dispatch = useAppDispatch();
